@@ -8,6 +8,10 @@ I completely believe in "Learn-by-doing" so the more projects I try to copy, the
 
 > Click on the folder for each app to see a demo gif of each.
 
-1. **Salon Booking** - teaches about Onboarding, Carousel.
+1. **Salon Booking** - teaches about Stacks and a lot of positioning, sizing, stuff. `MediaQuery.of(context).size.x` was pretty useful.
 2. **Calculator App** - Made this on my own, used a math parser library, created the UI from scratch, and figured out how to structure and organize folders in a Flutter project for faster development like I do with React (for styles especially).
 3. **WhatsApp UI** - teaches about ListTiles, Tabs, TabViews, and a bunch of cool premade Material stuff.
+
+Other Flutter apps I made not on this repo:
+- flutter-firebase (NetNinja)
+- travel_onboarding

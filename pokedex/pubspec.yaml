@@ -1,0 +1,22 @@
+name: pokedex
+description: A new Flutter project.
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies:
+  deep_pick: ^0.10.0
+  flutter:
+    sdk: flutter
+  google_fonts: ^4.0.3
+  http: ^0.13.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
