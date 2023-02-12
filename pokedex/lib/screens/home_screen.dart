@@ -83,14 +83,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               child: Column(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: <Widget>[
-                              Container(
-                                  height: 100,
-                                  width: 100,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                    image: NetworkImage(item.img ??
-                                        "https://carlo.vercel.app/imgs/carlo_about.jpg"),
-                                  ))),
+                              Hero(
+                                  tag: item.id ?? "0",
+                                  child: Container(
+                                      height: 100,
+                                      width: 100,
+                                      decoration: BoxDecoration(
+                                          image: DecorationImage(
+                                        image: NetworkImage(item.img ??
+                                            "https://carlo.vercel.app/imgs/carlo_about.jpg"),
+                                      )))),
                               Text(
                                 item.name ?? "Bulbasaur",
                                 style: TextStyle(

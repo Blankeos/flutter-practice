@@ -60,10 +60,12 @@ class PokemonDetailScreen extends StatelessWidget {
                               child: Container(
                                   padding: EdgeInsets.symmetric(
                                       vertical: 5, horizontal: 10),
-                                  child:
-                                      Text(t, style: TextStyle(fontSize: 15)),
+                                  child: Text(t,
+                                      style: TextStyle(
+                                          fontSize: 15, color: Colors.white)),
                                   decoration: BoxDecoration(
-                                      color: Colors.amber[500],
+                                      color:
+                                          S.colors.pokemonType[t.toLowerCase()],
                                       borderRadius: BorderRadius.circular(20))))
                       ],
                     ),
@@ -72,8 +74,10 @@ class PokemonDetailScreen extends StatelessWidget {
                     SizedBox(
                       height: 15,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                    Wrap(
+                      // mainAxisAlignment: MainAxisAlignment.center,
+                      runSpacing: 8,
+                      alignment: WrapAlignment.center,
                       children: <Widget>[
                         for (String t in pokemon.weaknesses as List<String>)
                           Padding(
@@ -85,7 +89,8 @@ class PokemonDetailScreen extends StatelessWidget {
                                       style: TextStyle(
                                           fontSize: 15, color: Colors.white)),
                                   decoration: BoxDecoration(
-                                      color: Colors.red[600],
+                                      color:
+                                          S.colors.pokemonType[t.toLowerCase()],
                                       borderRadius: BorderRadius.circular(20))))
                       ],
                     )
@@ -94,14 +99,16 @@ class PokemonDetailScreen extends StatelessWidget {
           ),
           Align(
               alignment: Alignment.topCenter,
-              child: Image(
-                  height: 130,
-                  width: 130,
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                    pokemon.img ??
-                        "https://carlo.vercel.app/imgs/carlo_about.jpg",
-                  ))),
+              child: Hero(
+                  tag: pokemon.id ?? "0",
+                  child: Image(
+                      height: 130,
+                      width: 130,
+                      fit: BoxFit.fill,
+                      image: NetworkImage(
+                        pokemon.img ??
+                            "https://carlo.vercel.app/imgs/carlo_about.jpg",
+                      )))),
         ],
       )),
     );
