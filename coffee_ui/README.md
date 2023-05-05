@@ -13,3 +13,17 @@ Learned:
 - [x] Separating into components with proper props structuring practice.
 - [x] `AspectRatio` is really good for card images.
 - [x] `GestureDetector` for hover animations.
+- [x] `BoxDecoration LinearGradient`
+- [x] Disable Landscape Orientations:
+  ```dart
+    class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+      SystemChrome.setPreferredOrientations([
+        DeviceOrientation.portraitUp,
+        DeviceOrientation.portraitDown,
+      ]);
+      return new MaterialApp(...);
+    }
+  }
+  ```

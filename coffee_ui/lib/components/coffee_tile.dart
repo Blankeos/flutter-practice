@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 
 class CoffeeTile extends StatelessWidget {
-  const CoffeeTile({super.key});
+  final String coffeeImagePath;
+  final String coffeeName;
+  final String coffeePrice;
+
+  const CoffeeTile(
+      {super.key,
+      required this.coffeeImagePath,
+      required this.coffeeName,
+      required this.coffeePrice});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +19,8 @@ class CoffeeTile extends StatelessWidget {
         padding: EdgeInsets.all(12),
         width: 200,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: Colors.black54,
+          borderRadius: BorderRadius.circular(18),
+          color: Color.fromARGB(255, 15, 15, 15),
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -21,9 +29,9 @@ class CoffeeTile extends StatelessWidget {
             AspectRatio(
               aspectRatio: 1 / 1,
               child: ClipRRect(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(18),
                   child: Image.asset(
-                    'assets/1.jpg',
+                    coffeeImagePath,
                     fit: BoxFit.cover,
                   )),
             ),
@@ -33,17 +41,28 @@ class CoffeeTile extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Latte', style: TextStyle(fontSize: 20)),
+                  Text(coffeeName, style: TextStyle(fontSize: 20)),
                   SizedBox(height: 4),
                   Text('With Almond Milk',
                       style: TextStyle(color: Colors.grey[700]))
                 ],
               ),
             ),
+
+            Spacer(),
+            // Price - CTA
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('\$4.00'),
+                Row(
+                  children: [
+                    Icon(Icons.attach_money, color: Colors.orange, size: 19),
+                    SizedBox(width: 1),
+                    Text(coffeePrice,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 16)),
+                  ],
+                ),
                 Container(
                     padding: EdgeInsets.all(4),
                     decoration: BoxDecoration(
