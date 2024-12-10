@@ -17,3 +17,13 @@ Other Flutter apps I made not on this repo:
 
 - flutter-firebase (NetNinja)
 - travel_onboarding
+
+### Notes
+
+- Install using [`fvm`](https://fvm.app/) - Like fnm or nvm, but for Flutter.
+- `fvm global <version>` to install a specific version globally, so no need to prefix `fvm` everytime.
+- `flutter doctor` to check installation. Install the rest if missing. Usually has instructions.
+- `flutter pub get` to install packages. Like `bun install`
+- `flutter run` to run the app. It runs `flutter pub get` as well. This will usually show me a list of platforms.
+- `flutter create --platforms=macos .` - to add a platform to an existing flutter project.
+- `flutter build` to build the app into an apk, ipa, or executable.

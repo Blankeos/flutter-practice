@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 import 'package:pokedex/styles/S.dart';
 
@@ -24,31 +22,31 @@ class PokemonDetailScreen extends StatelessWidget {
           Align(
             alignment: Alignment.center,
             child: Container(
-                margin: EdgeInsets.only(top: 60, bottom: 20),
-                padding: EdgeInsets.all(30),
+                margin: const EdgeInsets.only(top: 60, bottom: 20),
+                padding: const EdgeInsets.all(30),
                 width: MediaQuery.of(context).size.width - 28,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     color: Colors.white),
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 40),
+                    const SizedBox(height: 40),
                     Text(pokemon.name ?? "Bulbasaur",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 25, fontWeight: FontWeight.w500)),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
                     Text("Height: ${pokemon.height}"),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text("Weight: ${pokemon.weight}"),
-                    SizedBox(
+                    const SizedBox(
                       height: 40,
                     ),
-                    Text("Types:"),
-                    SizedBox(
+                    const Text("Types:"),
+                    const SizedBox(
                       height: 15,
                     ),
                     Row(
@@ -56,22 +54,22 @@ class PokemonDetailScreen extends StatelessWidget {
                       children: <Widget>[
                         for (String t in pokemon.type as List<String>)
                           Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              padding: const EdgeInsets.symmetric(horizontal: 5),
                               child: Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       vertical: 5, horizontal: 10),
-                                  child: Text(t,
-                                      style: TextStyle(
-                                          fontSize: 15, color: Colors.white)),
                                   decoration: BoxDecoration(
                                       color:
                                           S.colors.pokemonType[t.toLowerCase()],
-                                      borderRadius: BorderRadius.circular(20))))
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Text(t,
+                                      style: const TextStyle(
+                                          fontSize: 15, color: Colors.white))))
                       ],
                     ),
-                    SizedBox(height: 40),
-                    Text("Weaknesses:"),
-                    SizedBox(
+                    const SizedBox(height: 40),
+                    const Text("Weaknesses:"),
+                    const SizedBox(
                       height: 15,
                     ),
                     Wrap(
@@ -81,17 +79,17 @@ class PokemonDetailScreen extends StatelessWidget {
                       children: <Widget>[
                         for (String t in pokemon.weaknesses as List<String>)
                           Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
+                              padding: const EdgeInsets.symmetric(horizontal: 5),
                               child: Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       vertical: 5, horizontal: 10),
-                                  child: Text(t,
-                                      style: TextStyle(
-                                          fontSize: 15, color: Colors.white)),
                                   decoration: BoxDecoration(
                                       color:
                                           S.colors.pokemonType[t.toLowerCase()],
-                                      borderRadius: BorderRadius.circular(20))))
+                                      borderRadius: BorderRadius.circular(20)),
+                                  child: Text(t,
+                                      style: const TextStyle(
+                                          fontSize: 15, color: Colors.white))))
                       ],
                     )
                   ],

@@ -1,12 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:pokedex/models/pokemon_model.dart';
 import 'package:pokedex/screens/pokemondetail_screen.dart';
 import 'package:pokedex/styles/S.dart';
-import 'package:deep_pick/deep_pick.dart' as dp;
 
 // API Calling
 import 'package:http/http.dart' as http;
@@ -52,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Pokedex App'),
+        title: const Text('Pokedex App'),
         centerTitle: true,
         backgroundColor: S.colors.primary,
       ),
@@ -62,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
               color: S.colors.primary,
             ))
           : GridView.count(
-              padding: EdgeInsets.symmetric(vertical: 25.0),
+              padding: const EdgeInsets.symmetric(vertical: 25.0),
               crossAxisCount: 2,
               children: <Widget>[
                   if (pokeHub != null &&
@@ -70,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       pokeHub!.pokemon!.isNotEmpty)
                     for (var item in pokeHub!.pokemon as List<Pokemon>)
                       Padding(
-                        padding: EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -105,16 +102,16 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       )
                   else
-                    Text('Nope. No items here.'),
+                    const Text('Nope. No items here.'),
                 ]),
-      drawer: Drawer(),
+      drawer: const Drawer(),
       floatingActionButton: FloatingActionButton(
           onPressed: () {
             print("Fetching Data from FloatingActionButton");
             fetchData();
           },
-          child: Icon(Icons.refresh),
-          backgroundColor: S.colors.primary),
+          backgroundColor: S.colors.primary,
+          child: const Icon(Icons.refresh)),
     );
   }
 }

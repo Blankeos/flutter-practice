@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pokedex/screens/home_screen.dart';
-import 'package:pokedex/styles/S.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +17,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           textTheme: GoogleFonts.interTextTheme(Theme.of(context).textTheme),
         ),
-        home: HomeScreen());
+        home: const HomeScreen());
   }
 }
