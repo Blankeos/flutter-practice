@@ -3,6 +3,7 @@
 
 mod messages;
 mod sample_functions;
+mod tutorial_functions;
 
 // Uncomment below to target the web.
 // use tokio_with_wasm::alias as tokio;
@@ -17,6 +18,7 @@ async fn main() {
     // If you must use blocking code, use `tokio::task::spawn_blocking`
     // or the equivalent provided by your async library.
     tokio::spawn(sample_functions::communicate());
+    tokio::spawn(tutorial_functions::calculate_precious_data());
 
     // Keep the main function running until Dart shutdown.
     rinf::dart_shutdown().await;

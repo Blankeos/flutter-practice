@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:rinf/rinf.dart';
 
 import './components/draggable-appbar.dart';
-import './messages/all.dart';
+import './messages/all.dart'; // all proto messages (assignRustSignal)
 
 import 'package:window_manager/window_manager.dart';
 
 void main() async {
+  // Must add this line for RINF
   WidgetsFlutterBinding.ensureInitialized();
   await initializeRust(assignRustSignal);
 
   // Must add this line for window_manager
   await windowManager.ensureInitialized();
+
   runApp(const MyApp());
 }
 
@@ -80,6 +82,26 @@ class _MyHomePageState extends State<MyHomePage> {
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                MyPreciousData(
+                  inputNumbers: [3, 4, 5],
+                  inputString: 'Zero-cost abstraction',
+                ).sendSignalToRust();
+
+                final stopwatch = Stopwatch();
+                stopwatch.start();
+
+                int sum = 0;
+                for (var i = 0; i < 1000; i++) {
+                  sum += i;
+                }
+                print(
+                    '🐦: The final sum: $sum. Elapsed time: ${stopwatch.elapsedMicroseconds}μs');
+                stopwatch.stop();
+              },
+              child: const Text('Send a signal from Dart to Rust'),
             ),
           ],
         ),
