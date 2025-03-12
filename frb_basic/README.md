@@ -12,7 +12,6 @@
 3. One notable thing is the `flutter_rust_bridge.yaml` where you configure the:
 
 - rust root - what you write in rust.
-- dart root - what you use within dart.
 
 4. Another notable thing, notice in `main.dart` that before running the app. We initialize the rust background process basically.
 
@@ -22,3 +21,5 @@ Future<void> main() async {
   runApp(const MyApp());
 }
 ```
+
+5. The build will be in macos `./build/macos/Build/Products/Release/frb_basic.app` - I used justfile to note this lol.

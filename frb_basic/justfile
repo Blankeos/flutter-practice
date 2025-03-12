@@ -1,0 +1,11 @@
+default:
+    just --list
+
+dev:
+    dashmon -d macos
+
+build:
+    flutter build macos
+
+preview:
+    open ./build/macos/Build/Products/Release/frb_basic.app

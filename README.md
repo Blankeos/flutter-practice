@@ -29,3 +29,7 @@ Other Flutter apps I made not on this repo:
 - `flutter run -d <platform>` to run on a specific platform, where `<platform>` could be `chrome`, `macos`, `ios`, `android` etc. For example: `flutter run -d chrome` to run on web.
 - `flutter create --platforms=macos .` - to add a platform to an existing flutter project.
 - `flutter build` to build the app into an apk, ipa, or executable. Optionally you can pass a specific platform to build for.
+
+If you want hot reload (like it presses `r` automatically for you).
+
+- `dashmon` - Install this via `flutter pub global activate dashmon` and replace essentially flutter run with dashmon
