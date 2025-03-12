@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
-  rust_lib_frb_basic: 576fb0372de85d9ee27df806d00575c6949399c7
+  rust_lib_frb_basic: 7bda2926e862e1b76f110578d84f0239caf4b044
 
 PODFILE CHECKSUM: 236401fc2c932af29a9fcf0e97baeeb2d750d367
 

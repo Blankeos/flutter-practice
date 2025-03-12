@@ -26,5 +26,6 @@ Other Flutter apps I made not on this repo:
 - `flutter doctor` to check installation. Install the rest if missing. Usually has instructions.
 - `flutter pub get` to install packages. Like `bun install`
 - `flutter run` to run the app. It runs `flutter pub get` as well. This will usually show me a list of platforms.
+- `flutter run -d <platform>` to run on a specific platform, where `<platform>` could be `chrome`, `macos`, `ios`, `android` etc. For example: `flutter run -d chrome` to run on web.
 - `flutter create --platforms=macos .` - to add a platform to an existing flutter project.
 - `flutter build` to build the app into an apk, ipa, or executable. Optionally you can pass a specific platform to build for.

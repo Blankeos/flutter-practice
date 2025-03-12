@@ -1,16 +1,24 @@
 # frb_basic
 
-A new Flutter project.
+### Notes
 
-## Getting Started
+1. Refer to [FRB's Quickstart](https://cjycode.com/flutter_rust_bridge/quickstart) for everything. It's useful.
+   - But basically I installed `flutter_rust_bridge_codegen` then I can use some commands like `integrate` or `create`. (very succinct)
+2. How Rust-Flutter communicates
 
-This project is a starting point for a Flutter application.
+- You write code in Rust in `rust/src/api`, use the macros for frb.
+- Then you run the `flutter_rust_bridge_codegen generate --watch` and it generates code in: `lib/src/rust/*`
 
-A few resources to get you started if this is your first Flutter project:
+3. One notable thing is the `flutter_rust_bridge.yaml` where you configure the:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- rust root - what you write in rust.
+- dart root - what you use within dart.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+4. Another notable thing, notice in `main.dart` that before running the app. We initialize the rust background process basically.
+
+```dart
+Future<void> main() async {
+  await RustLib.init();
+  runApp(const MyApp());
+}
+```
